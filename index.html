@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pocket beats - ashlilys</title>
+    <style>
+        /* 1. Background Layer Styles */
+        .bg-top, .bg-bottom {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            z-index: -1;
+            background-size: cover; 
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        .bg-top {
+            top: 0;
+            height: 350px;
+            background-image: url('top-musicimage.png');
+            background-position: center bottom;
+        }
+
+        .bg-bottom {
+            bottom: 0;
+            height: 350px;
+            background-image: url('bottom-musicimage.png');
+            background-position: center top;
+        }
+
+        /* 2. Page & Layout Styles */
+        body { 
+            background-color: #fdf6f3; 
+            color: #5c4a44; 
+            font-family: "Courier New", Courier, monospace; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* 3. The 'Card' container with increased spacing */
+        .content-container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 40px;
+            border-radius: 20px;
+            width: 85%;
+            max-width: 600px;
+            text-align: center;
+            /* Increased margin to 250px to create more space from the images */
+            margin: 250px 0; 
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        h1 { 
+            letter-spacing: 5px; 
+            margin-bottom: 20px; 
+            font-size: 2.5rem; 
+            color: #5c4a44; 
+            border-bottom: 2px solid #eecad0; 
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .subtitle {
+            font-size: 14px; 
+            letter-spacing: 2px; 
+            color: #a67b7b; 
+            margin-top: 0;
+            margin-bottom: 40px; 
+            font-style: italic; 
+        }
+
+        .menu a { 
+            display: block; margin: 25px 0; color: #a67b7b; text-decoration: none; 
+            font-size: 1.3rem; font-weight: bold; transition: 0.3s;
+        }
+        
+        .menu a:hover { color: #d4a5a9; letter-spacing: 6px; }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 12px;
+            color: #a67b7b;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-top"></div>
+    <div class="bg-bottom"></div>
+
+    <div class="content-container">
+        <h1>pocket beats</h1>
+        <div class="subtitle">songs i'm obsessed with...</div>
+        
+        <div class="menu">
+            <a href="hateme_ilykimchi.html">01. ilykimchi - hate me</a>
+            <a href="bumcrushv2_yazida.html">02. yazida - bum crush v2</a>
+            <a href="trueromance_pinkpantheress.html">03. pinkpantheress - true romance</a>
+        </div>
+
+        <footer>
+            made by <a href="https://www.instagram.com/ashliliez/" target="_blank" style="color: #a67b7b; text-decoration: underline;">@ashliliez</a> on instagram
+        </footer>
+    </div>
+
+</body>
+</html>
