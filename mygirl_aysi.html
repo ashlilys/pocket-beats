@@ -1,48 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>my girl - aysi</title>
+    <title>Song Page</title>
     <style>
-		:root {
-			color-scheme: light; /* Forces the browser to stay in light mode */
-		}
-        /* 1. Background Layers */
-        .bg-top, .bg-bottom {
-            position: fixed;
-            width: 100%;
-            left: 0;
-            z-index: -1;
-            background-size: cover; 
-            background-repeat: no-repeat;
-            pointer-events: none;
-        }
-
-        .bg-top {
-            top: 0;
-            height: 350px;
-            background-image: url('top-musicimage.png');
-            background-position: center bottom;
-        }
-
-        .bg-bottom {
-            bottom: 0;
-            height: 350px;
-            background-image: url('bottom-musicimage.png');
-            background-position: center top;
-        }
-
-        /* 2. Layout */
+        /* 1. Base Styles & Entry Animation */
         body { 
-            background-color: #fdf6f3; 
-            color: #5c4a44; 
+            background-color: #fdf6f3 !important; 
+            color: #5c4a44 !important; 
             font-family: "Courier New", Courier, monospace; 
             margin: 0;
             display: flex;
             justify-content: center;
             min-height: 100vh;
+            animation: fadeIn 1.2s ease-in;
         }
 
-        /* 3. Content Card */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* 2. Spotify Hover Glow */
+        .spotify-container {
+            max-width: 400px;
+            margin: 20px auto;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-radius: 12px;
+        }
+
+        .spotify-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 20px #eecad0; /* Pulse glow */
+            cursor: pointer;
+        }
+
+        /* 3. Layout Styles */
         .content-container {
             background-color: rgba(255, 255, 255, 0.9); 
             padding: 40px;
@@ -50,22 +42,16 @@
             width: 85%;
             max-width: 600px;
             text-align: center;
-            margin: 250px 0; 
+            margin: 100px 0; 
             box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* 4. Page Specific Styles */
         h2 { 
             letter-spacing: 3px; 
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #d9c5b2; 
             display: inline-block; 
-        }
-
-        .spotify-embed {
-            max-width: 400px;
-            margin: 20px auto;
         }
 
         .lyrics { 
@@ -83,27 +69,22 @@
             text-decoration: none; 
             border: 1px solid #a67b7b; 
             padding: 10px 20px; 
+            transition: 0.3s;
         }
-        .back-link:hover { 
-            background-color: #a67b7b; 
-            color: white; 
-        }
+        .back-link:hover { background-color: #a67b7b; color: white; }
     </style>
 </head>
 <body>
 
-    <div class="bg-top"></div>
-    <div class="bg-bottom"></div>
-
     <div class="content-container">
-        <h2>my girl - aysi</h2>
+        <h2>Song Title Here</h2>
         
-        <div class="spotify-embed">
-			<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1hpvfNXdSmHzU2yWbqAo0o?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="spotify-container">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="YOUR_SPOTIFY_LINK_HERE" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
         <div class="lyrics">
-            <p>"when I touch flowers I remember your skin<br>my girl, where have you been?"</p>
+            <p>"Your song lyrics go here"</p>
         </div>
 
         <a href="index.html" class="back-link"><- back to hub</a>
