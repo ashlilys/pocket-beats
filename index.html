@@ -88,6 +88,15 @@
             color: #a67b7b;
             opacity: 0.7;
         }
+		.hover-effect {
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		
+		.hover-effect:hover {
+			transform: scale(1.05); 
+			box-shadow: 0px 0px 15px #eecad0; 
+			cursor: pointer;
+}
     </style>
 </head>
 <body>
@@ -98,7 +107,13 @@
     <div class="content-container">
         <h1>pocket beats</h1>
         <div class="subtitle">songs i'm obsessed with...</div>
-        
+
+	<div style="text-align: center;">
+    	<img src="https://i.pinimg.com/736x/70/49/a6/7049a6d73c1a04a6604563d84f091270.jpg" 
+			class="hover-effect" 
+			style="width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0 20px 0; border: 2px solid #eecad0;">
+	</div>
+		
         <div class="menu">
             <a href="hateme_ilykimchi.html">01. hate me - ilykimchi</a>
             <a href="bumcrushv2_yazida.html">02. bum crush v2 - yazida, angelus</a>
@@ -115,5 +130,6 @@
 
 </body>
 </html>
+
 
 
