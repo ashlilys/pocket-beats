@@ -3,6 +3,11 @@
 <head>
     <title>pocket beats</title>
     <style>
+		/* Custom Scrollbar */
+		::-webkit-scrollbar { width: 8px; }
+		::-webkit-scrollbar-track { background: #fdf6f3; }
+		::-webkit-scrollbar-thumb { background: #eecad0; border-radius: 10px; }
+		::-webkit-scrollbar-thumb:hover { background: #d4a5a9; }
 		#songSearch:focus {
 			border-color: #d4a5a9 !important;
 			box-shadow: 0px 0px 15px #eecad0 !important;
@@ -116,7 +121,10 @@
 			<a href="nameless_nataliered.html">011. nameless - natalie red</a>
 
         </div>
-
+		<div id="noResults" style="display:none; color: #a67b7b; margin-top: 20px; font-style: italic;">
+    		no matches found... (｡•́︿•̀｡)
+		</div>
+		
         <footer>
             more songs will be added! <br> if you'd like to send any songs and have them<br>
 			potentially added here, message me <a href="https://www.instagram.com/ashliliez/" target="_blank" style="color: #a67b7b; text-decoration: underline;">@ashliliez</a> on instagram
@@ -125,28 +133,28 @@
 	
 <script>
 function filterSongs() {
-  // Get what the user is typing
-  let input = document.getElementById('songSearch').value.toLowerCase();
-  // Get the list of songs
-  let menu = document.querySelector('.menu');
-  let songs = menu.getElementsByTagName('a');
+    let input = document.getElementById('songSearch').value.toLowerCase();
+    let menu = document.querySelector('.menu');
+    let songs = menu.getElementsByTagName('a');
+    let noResults = document.getElementById('noResults');
+    let found = false;
 
-  // Look through every song link
-  for (let i = 0; i < songs.length; i++) {
-    let songText = songs[i].textContent.toLowerCase();
-    
-    // If the song matches the search, show it. If not, hide it!
-    if (songText.includes(input)) {
-      songs[i].style.display = "block";
-    } else {
-      songs[i].style.display = "none";
+    for (let i = 0; i < songs.length; i++) {
+        let songText = songs[i].textContent.toLowerCase();
+        if (songText.includes(input)) {
+            songs[i].style.display = "block";
+            found = true;
+        } else {
+            songs[i].style.display = "none";
+        }
     }
-  }
+    noResults.style.display = found ? "none" : "block";
 }
 </script>
 	
 </body>
 </html>
+
 
 
 
