@@ -92,7 +92,11 @@
 				class="hover-effect" 
 				style="width: 100%; max-width: 280px; border-radius: 15px; margin: 10px 0 20px 0; border: 2px solid #eecad0;">
         </div>
-
+	<div style="margin-bottom: 30px;">
+		<input type="text" id="songSearch" onkeyup="filterSongs()" placeholder="search a song or number..." 
+			style="padding: 10px; width: 80%; max-width: 300px; border-radius: 5px; border: 2px solid #eecad0; font-family: 'Courier New', monospace; background: #fffcfb; color: #a67b7b; outline: none;">
+	</div>
+		
         <div class="menu">
             <a href="hateme_ilykimchi.html">001. hate me - ilykimchi</a>
             <a href="bumcrushv2_yazida.html">002. bum crush v2 - yazida, angelus</a>
@@ -113,9 +117,32 @@
 			potentially added here, message me <a href="https://www.instagram.com/ashliliez/" target="_blank" style="color: #a67b7b; text-decoration: underline;">@ashliliez</a> on instagram
         </footer>
     </div>
+	
+<script>
+function filterSongs() {
+  // Get what the user is typing
+  let input = document.getElementById('songSearch').value.toLowerCase();
+  // Get the list of songs
+  let menu = document.querySelector('.menu');
+  let songs = menu.getElementsByTagName('a');
 
+  // Look through every song link
+  for (let i = 0; i < songs.length; i++) {
+    let songText = songs[i].textContent.toLowerCase();
+    
+    // If the song matches the search, show it. If not, hide it!
+    if (songText.includes(input)) {
+      songs[i].style.display = "block";
+    } else {
+      songs[i].style.display = "none";
+    }
+  }
+}
+</script>
+	
 </body>
 </html>
+
 
 
 
